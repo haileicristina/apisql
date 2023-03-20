@@ -14,6 +14,31 @@ module.exports = {
             })
         }
     },
+
+    async nameUser(req, res){
+        const { id } = req.params;
+        
+        const user = await User.findByPk(id, {
+            attributes: ['name']
+        })
+
+        return res.status(200).json(user)
+    },
+
+    async nameAllUser(req, res){
+       const { name } = req.query;
+        
+        const user = await User.findAll({
+            attributes: ['name'],
+            through: { 
+                attributes: [] 
+            }
+        })
+
+        return res.status(200).json(user)
+    },
+
+
     //armazenar o usuário
     async store(req, res){
         const { name, email } = req.body;
