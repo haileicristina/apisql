@@ -20,6 +20,12 @@ routes.get('/users/:user_id/techsName', TechController.forName)
 routes.post('/users/:user_id/techs', TechController.store)
 routes.delete('/users/:user_id/techs', TechController.delete)
 
+routes.get('/school', TechController.listSchoolTech)
+routes.put('/techs/:id/school/:id', TechController.updateSchool);
+routes.post('/school/:tech_id/tech', TechController.createSchoolTech)
+
+
 routes.get('/report', ReportController.show)
+
 
 module.exports = routes;

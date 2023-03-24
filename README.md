@@ -7,11 +7,12 @@ sair: /q
 showdatabase: \c nomedatabase
 showtable: \dt
 
-
+**Criação de db no sequelize**
 npx sequelize db:create
 
 npx sequelize migration:create --name create-users
 
+**Init migration**
 npx sequelize db:migrate
 
 **desfazer a ultima migration**
